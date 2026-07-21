@@ -1,36 +1,51 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# ☕ Get Me A Coffee
 
-## Getting Started
+> **🚧 This project is currently under active development.**
 
-First, run the development server:
+**Get Me A Coffee** is a crowdfunding platform where creators can receive support from their fans through small contributions.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+The project is being built with modern web technologies and new features are being added regularly.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Current Status
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+This project is **under construction**.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Core functionality is being implemented and improved continuously.
 
-## Learn More
+## 📋 Planned Features
 
-To learn more about Next.js, take a look at the following resources:
+* 🔐 User Authentication
+* 👤 Creator Profiles
+* ☕ Support Creators
+* 💳 Secure Payments
+* 📊 Creator Dashboard
+* 📜 Donation History
+* 📱 Fully Responsive Design
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🛠️ Tech Stack
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+* **Frontend:** Next.js, React, Tailwind CSS
+* **Backend:** Next.js API Routes
+* **Database:** MongoDB
+* **Authentication:** Auth.js (NextAuth)
+* **Payments:** Razorpay *(Planned)*
 
-## Deploy on Vercel
+## 📌 Roadmap
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+* ✅ Project setup
+* ✅ Authentication
+* 🚧 Creator dashboard
+* 🚧 Payment integration
+* ⏳ User profiles
+* ⏳ Deployment
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## ⭐ Stay Tuned
+
+The project is actively being developed, and updates will be pushed regularly.
+
+If you're interested in following its progress, consider **starring ⭐ the repository**.
+
+---
+
+**Status:** 🚧 Under Construction
+://nextjs.org/docs/app/building-your-application/deploying) for more details.
