@@ -48,4 +48,3 @@ If you're interested in following its progress, consider **starring ⭐ the repo
 ---
 
 **Status:** 🚧 Under Construction
-://nextjs.org/docs/app/building-your-application/deploying) for more details.
