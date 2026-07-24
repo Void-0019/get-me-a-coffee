@@ -9,10 +9,10 @@ const Navbar = () => {
 
   return (
     <nav className='bg-gray-900 text-white flex justify-between items-center px-4 h-16'>
-      <div className="logo font-bold text-lg flex justify-center items-center">
+      <Link href={"/"} className="logo font-bold text-lg flex justify-center items-center">
         <img width={50} src="/coffee.gif" alt="" />
         <span>GetMeACoffee</span>
-      </div>
+      </Link>
 
       {/* {session && (
           <div className="flex items-center gap-2 ml-6">
@@ -32,7 +32,9 @@ const Navbar = () => {
 
       <div className='relative'>
         {session && <>
-          <button onClick={()=>setShowdropdown(!showdropdown)} id="dropdownDefaultButton" data-dropdown-toggle="dropdown" className="mx-4 rounded-lg inline-flex items-center justify-center text-white bg- box-border border border-transparent bg-linear-to-br from-purple-600 to-blue-500 hover:bg-linear-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5" type="button">
+          <button onClick={()=>setShowdropdown(!showdropdown)} onBlur={()=>{setTimeout(()=>{
+
+          }, 300); setShowdropdown(false)}} id="dropdownDefaultButton" data-dropdown-toggle="dropdown" className="mx-4 rounded-lg inline-flex items-center justify-center text-white bg- box-border border border-transparent bg-linear-to-br from-purple-600 to-blue-500 hover:bg-linear-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5" type="button">
             Welcome {session.user.name}
             <svg className="w-4 h-4 ms-1.5 -me-0.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m19 9-7 7-7-7" /></svg>
           </button>
@@ -43,10 +45,7 @@ const Navbar = () => {
                 <Link href="/dashboard" className="inline-flex items-center w-full p-2 hover:bg-neutral-800 hover:text-heading rounded">Dashboard</Link>
               </li>
               <li>
-                <Link href="#" className="inline-flex items-center w-full p-2 hover:bg-neutral-800 hover:text-heading rounded">Settings</Link>
-              </li>
-              <li>
-                <Link href="#" className="inline-flex items-center w-full p-2 hover:bg-neutral-800 hover:text-heading rounded">Earnings</Link>
+                <Link href="#" className="inline-flex items-center w-full p-2 hover:bg-neutral-800 hover:text-heading rounded">Your Page</Link>
               </li>
               <li>
                 <Link href="#" className="inline-flex items-center w-full p-2 hover:bg-neutral-800 hover:text-heading rounded">Sign out</Link>
