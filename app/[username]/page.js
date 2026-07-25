@@ -27,31 +27,43 @@ const Username = async ({ params }) => {
 
         <div className="payment flex gap-3 w-[80%] mt-10">
           <div className="supporters w-1/2 bg-slate-900 rounded-lg text-white p-10">
-          {/* Show list of all the supporters as a leaderboard. */}
-          <h2 className='text-2xl font-bold mb-5'>Supporters</h2>
-          <ul className='mx-5'>
-            <li className='my-2'>Shubham donated $30 with a message ""</li>
-            <li className='my-2'>Ramesh donated $40 with a message ""</li>
-            <li className='my-2'>Dhruv donated $90 with a message ""</li>
-            <li className='my-2'>Shubham donated $30 with a message ""</li>
-            <li className='my-2'>Ramesh donated $40 with a message ""</li>
-            <li className='my-2'>Dhruv donated $90 with a message ""</li>
-            <li className='my-2'>Shubham donated $30 with a message ""</li>
-            <li className='my-2'>Ramesh donated $40 with a message ""</li>
-            <li className='my-2'>Dhruv donated $90 with a message ""</li>
-          </ul>
+            {/* Show list of all the supporters as a leaderboard. */}
+            <h2 className='text-2xl font-bold mb-5'>Supporters</h2>
+            <ul className='mx-5'>
+              <li className='my-2 flex gap-2 items-center'>
+                <img width={35} src="/avatar.gif" alt="user avatar" />
+                <span>Shubham donated <span className='font-bold'>$30</span> with a message "I support you bro. Lots of 🧡"</span>
+              </li>
+              <li className='my-2 flex gap-2 items-center'>
+                <img width={35} src="/avatar.gif" alt="user avatar" />
+                <span>Rohan donated <span className='font-bold'>$80</span> with a message "I support you bro. Lots of 🧡"</span>
+              </li>
+              <li className='my-2 flex gap-2 items-center'>
+                <img width={35} src="/avatar.gif" alt="user avatar" />
+                <span>Paras donated <span className='font-bold'>$50</span> with a message "I support you bro. Lots of 🧡"</span>
+              </li>
+              <li className='my-2 flex gap-2 items-center'>
+                <img width={35} src="/avatar.gif" alt="user avatar" />
+                <span>Sam donated <span className='font-bold'>$10</span> with a message "I support you bro. Lots of 🧡"</span>
+              </li>
+            </ul>
           </div>
 
           <div className="makePayment w-1/2 bg-slate-900 rounded-lg text-white p-10">
             <h2 className="text-2xl font-bold my-5">Make a Payment</h2>
-            <div className="flex gap-2">
+            <div className="flex gap-2 flex-col">
+              {/* input for name and message */}
+              <div className='flex flex-col gap-2'>
+                <input type="text" className='w-full p-3 rounded-lg bg-slate-800' placeholder='Enter Name' />
+                <input type="text" className='w-full p-3 rounded-lg bg-slate-800' placeholder='Enter Message' />
+              </div>
               <input type="text" className='w-full p-3 rounded-lg bg-slate-800' placeholder='Enter Amount' />
-              <button className='bg-slate-800 p-3 rounded-lg'>Pay</button>
+              <button type="button" className="text-white cursor-pointer bg-linear-to-br from-purple-600 to-blue-500 hover:bg-linear-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-4 py-2.5 text-center leading-5">Pay</button>
             </div>
             {/* Or choose from these amount */}
             <div className="flex gap-2 mt-5">
               <button className='bg-slate-800 p-3 rounded-lg'>Pay $10</button>
-              <button className='bg-slate-800 p-3 rounded-lg'>Pay $20</button>
+              <button className='bg-slate-800 p-3 rounded-lg'>Pay $2 0</button>
               <button className='bg-slate-800 p-3 rounded-lg'>Pay $30</button>
             </div>
           </div>
