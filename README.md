@@ -35,8 +35,8 @@ Core functionality is being implemented and improved continuously.
 * ✅ Project setup
 * ✅ Authentication
 * ✅ Creator dashboard
-* 🚧 Payment integration
-* ⏳ User profiles
+* ✅ Payment integration
+* 🚧 User profiles
 * ⏳ Deployment
 
 ## ⭐ Stay Tuned
