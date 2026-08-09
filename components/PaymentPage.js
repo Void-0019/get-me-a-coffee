@@ -23,7 +23,7 @@ const PaymentPage = ({ username }) => {
     }
 
     const getData = async () => {
-        let u = fetchuser(username)
+        let u = await fetchuser(username)
         setcurrentUser(u)
         let dbpayments = await fetchpayments(username)
         setPayments(dbpayments)
@@ -35,7 +35,7 @@ const PaymentPage = ({ username }) => {
         let a = await initiate(amount, username, paymentform)
         let orderId = a.id
         var options = {
-            "key": process.env.NEXT_PUBLIC_KEY_ID, // Enter the Key ID generated from the Dashboard
+            "key": currentUser.razorpayid, // Enter the Key ID generated from the Dashboard
             "amount": amount, // Amount is in currency subunits. 
             "currency": "INR",
             "name": "Get Me A Coffee", //your business name
@@ -67,11 +67,11 @@ const PaymentPage = ({ username }) => {
 
             <div className="relative">
                 <div className="cover w-full relative">
-                    <img className='h-130 w-full object-cover' src="/cover.png" alt="" />
+                    <img className='h-130 w-full object-cover' src={currentUser.coverpic} alt="" />
                 </div>
 
                 <div className='absolute -bottom-20 left-1/2 -translate-x-1/2'>
-                    <img className='rounded-full border-4 border-white' width={200} height={200} src="/profile.png" alt="" />
+                    <img className='rounded-full border-4 border-white' width={200} height={200} src={currentUser.profilepic} alt="" />
                 </div>
             </div>
 
@@ -91,6 +91,7 @@ const PaymentPage = ({ username }) => {
                         {/* Show list of all the supporters as a leaderboard. */}
                         <h2 className='text-2xl font-bold mb-5'>Supporters</h2>
                         <ul className='mx-5'>
+                            {payments.length === 0 && <li>No payments yet</li>}
                             {payments.map((p) => {
                                 return (
                                 <li key={p._id} className='my-2 flex gap-2 items-center'>
@@ -111,7 +112,7 @@ const PaymentPage = ({ username }) => {
                                 <input onChange={handleChange} value={paymentform.message} name='message' type="text" className='w-full p-3 rounded-lg bg-slate-800' placeholder='Enter Message' />
                             </div>
                             <input onChange={handleChange} value={paymentform.amount} name='amount' type="text" className='w-full p-3 rounded-lg bg-slate-800' placeholder='Enter Amount' />
-                            <button onClick={()=>pay(Number.parseInt(paymentform.amount)*100)} type="button" className="text-white cursor-pointer bg-linear-to-br from-purple-600 to-blue-500 hover:bg-linear-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-4 py-2.5 text-center leading-5">Pay</button>
+                            <button onClick={()=>pay(Number.parseInt(paymentform.amount)*100)} type="button" disabled={paymentform.name.length<2 || paymentform.message.length<4 || paymentform.amount.length<1} className="text-white cursor-pointer bg-linear-to-br from-purple-600 to-blue-500 hover:bg-linear-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-4 py-2.5 text-center leading-5 disabled:opacity-50 disabled:cursor-not-allowed">Pay</button>
                         </div>
                         {/* Or choose from these amount */}
                         <div className="flex gap-2 mt-5">
