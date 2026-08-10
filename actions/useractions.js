@@ -9,17 +9,11 @@ import connectDB from "@/db/connectDB"
 export const initiate = async (amount, to_username, paymentform) => {
     await connectDB();
 
-    var instance = new Razorpay({ key_id: process.env.NEXT_PUBLIC_KEY_ID, key_secret: process.env.KEY_SECRET })
+    // fetch the secret of the user who is getting the payment
+      let user = await User.findOne({username: to_username})
+      const secret = user.razorpaysecret
 
-    instance.orders.create({
-        amount: 50000,
-        currency: "<currency>",
-        receipt: "receipt#1",
-        notes: {
-            key1: "value3",
-            key2: "value2"
-        }
-    })
+    var instance = new Razorpay({ key_id: user.razorpayid, key_secret: secret })
 
     let options = {
         amount: Number.parseInt(amount),
