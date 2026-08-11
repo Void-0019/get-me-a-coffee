@@ -37,26 +37,65 @@ export default function Home() {
         </div>
       </div>
 
-<div className="divider bg-white h-0.5 opacity-5"></div>
+      <div className="divider bg-white h-0.5 opacity-5"></div>
+
 
       <div className="text-white container mx-auto pb-20 pt-14">
-        <h2 className="text-3xl  font-bold text-center mb-10">Learn more about us</h2>
-        <div className="flex gap-5 justify-around">
-          <div className="item space-y-3 flex flex-col justify-center items-center">
-            <img className="bg-slate-400 rounded-full p-2 text-black" width={88} src="man.gif" alt="" />
-            <p className="font-bold">Your fans want to help</p>
-            <p className="">Your fans are available for you help you</p>
-          </div>
-          <div className="item space-y-3 flex flex-col justify-center items-center">
-            <img className="bg-slate-400 rounded-full p-2 text-black" width={88} src="coin.gif" alt="" />
-            <p className="font-bold">Your fans want to help</p>
-            <p className="">Your fans are available for you help you</p>
-          </div>
-          <div className="item space-y-3 flex flex-col justify-center items-center">
-            <img className="bg-slate-400 rounded-full p-2 text-black" width={88} src="group.gif" alt="" />
-            <p className="font-bold">Your fans want to help</p>
-            <p className="">Your fans are available for you help you</p>
-          </div>
+        <h2 className="text-3xl font-bold text-center mb-10">
+          Connect With Me
+        </h2>
+
+        <div className="flex gap-5 justify-center flex-wrap">
+
+          {/* Instagram */}
+          <a
+            href="https://www.instagram.com/void_0019/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-56 p-6 rounded-xl bg-slate-800 hover:bg-slate-700 transition flex flex-col justify-center items-center gap-3"
+          >
+            <img
+              src="/instagram.gif"
+              width={70}
+              alt="Instagram"
+            />
+            <p className="font-bold text-lg">Instagram</p>
+            <p className="text-sm text-gray-400">@void_0019</p>
+          </a>
+
+          {/* LinkedIn */}
+          <a
+            href="https://linkedin.com/in/https://tinyurl.com/bd62x73c"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-56 p-6 rounded-xl bg-slate-800 hover:bg-slate-700 transition flex flex-col justify-center items-center gap-3"
+          >
+            <img
+              src="/linkedin.gif"
+              width={70}
+              alt="LinkedIn"
+            />
+            <p className="font-bold text-lg">LinkedIn</p>
+            <p className="text-sm text-gray-400"></p>
+          </a>
+
+          {/* GitHub */}
+          <a
+            href="https://github.com/void-0019"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-56 p-6 rounded-xl bg-slate-800 hover:bg-slate-700 transition flex flex-col justify-center items-center gap-3"
+          >
+            <img
+              src="/github.gif"
+              width={70}
+              alt="GitHub"
+            />
+            <p className="font-bold text-lg">GitHub</p>
+            <p className="text-sm text-gray-400">@void_0019</p>
+          </a>
+
+
         </div>
       </div>
     </>
