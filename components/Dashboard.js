@@ -12,7 +12,7 @@ const Dashboard = () => {
 
     useEffect(() => {
         if (status === "loading") return
-        if (session === "unauthenticated") {
+        if (status === "unauthenticated") {
             router.push('/login')
             return
         }
@@ -27,12 +27,27 @@ const Dashboard = () => {
     }
 
     const handleChange = (e) => {
-        setform({ ...form, [e.target.name]: e.target.value })
+        let value = e.target.value
+
+        if(e.target.name === "username"){
+            value = value.replace(/\s/g, "")
+        }
+
+        setform({ ...form, [e.target.name]: value })
     }
 
     const handleSubmit = async (e) => {
-        update()
         let a = await updateProfile(e, session.user.name)
+        
+        if(a?.error){
+            toast.error(a.error)
+            return
+        }
+
+        await update({
+            name: a.username
+        })
+
         toast.success('Profile Updated!', {
             position: "top-center",
             autoClose: 5000,

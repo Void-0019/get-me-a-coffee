@@ -8,7 +8,8 @@ import { ToastContainer, toast, Bounce } from 'react-toastify';
 
 const PaymentPage = ({ username }) => {
     const { data: session } = useSession();
-    const [currentUser, setcurrentUser] = useState({})
+    const [currentUser, setcurrentUser] = useState(null)
+    const [loading, setLoading] = useState(null)
     const [payments, setPayments] = useState([])
     const searchParams = useSearchParams()
     const [paymentform, setPaymentform] = useState({
@@ -19,7 +20,7 @@ const PaymentPage = ({ username }) => {
 
     useEffect(() => {
         getData()
-    }, [])
+    }, [username])
 
     useEffect(() => {
         if (searchParams.get("paymentdone") === "true") {
@@ -50,9 +51,26 @@ const PaymentPage = ({ username }) => {
 
     const getData = async () => {
         let u = await fetchuser(username)
+        if (!u) {
+            setcurrentUser(null)
+            setLoading(false)
+            return
+        }
+
         setcurrentUser(u)
         let dbpayments = await fetchpayments(username)
         setPayments(dbpayments)
+
+        setLoading(false)
+    }
+
+    if (loading) {
+        return <div className='text-white text-center mt-10'>Loading...</div>
+    }
+
+
+    if (!currentUser) {
+        return <div className="text-white text-center mt-10">User not found</div>
     }
 
 
@@ -120,10 +138,10 @@ const PaymentPage = ({ username }) => {
                     @{username}
                 </div>
                 <div className='text-slate-400'>
-                    Full Stack Developer
+                    Lets help {username} get a coffee!
                 </div>
                 <div className='text-slate-400'>
-                    5,000 members 80 posts $15,500/release
+                    {payments.length} Payments | ₹{payments.reduce((a, b) => a + b.amount / 100, 0)} Raised
                 </div>
 
                 <div className="payment flex gap-3 w-[80%] mt-10">
