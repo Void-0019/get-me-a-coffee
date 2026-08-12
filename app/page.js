@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -9,30 +10,34 @@ export default function Home() {
           A crowdfunding platform for creators. Get funded by your fans and followers.
         </p>
         <div className="flex gap-2">
+          <Link href={"/login"}>
           <button type="button" className="text-white bg-linear-to-br from-purple-600 to-blue-500 hover:bg-linear-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-4 py-2.5 text-center leading-5">Start Here</button>
+          </Link>
+          <Link href={"/about"}>
           <button type="button" className="text-white bg-linear-to-br from-purple-600 to-blue-500 hover:bg-linear-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-4 py-2.5 text-center leading-5">Read More</button>
+          </Link>
         </div>
       </div>
 
       <div className="divider bg-white h-0.5 opacity-5"></div>
 
-      <div className="text-white container mx-auto pb-20 pt-14">
-        <h2 className="text-3xl  font-bold text-center mb-10">Your Fans can buy you a Coffee</h2>
-        <div className="flex gap-5 justify-around">
-          <div className="item space-y-3 flex flex-col justify-center items-center">
+      <div className="text-white container mx-auto pb-16 pt-14">
+        <h2 className="text-3xl  font-bold text-center mb-15">Support the Creators You Love</h2>
+        <div className="flex gap-5">
+          <div className="item w-1/3 space-y-3 flex flex-col justify-center items-center">
             <img className="bg-slate-400 rounded-full p-2 text-black" width={88} src="man.gif" alt="" />
-            <p className="font-bold">Your fans want to help</p>
-            <p className="">Your fans are available for you help you</p>
+            <p className="font-bold">Support from Your Community</p>
+            <p className="text-center">Your fans and followers can support your creative journey by contributing directly to your work.</p>
           </div>
-          <div className="item space-y-3 flex flex-col justify-center items-center">
+          <div className="item w-1/3 space-y-3 flex flex-col justify-center items-center">
             <img className="bg-slate-400 rounded-full p-2 text-black" width={88} src="coin.gif" alt="" />
-            <p className="font-bold">Your fans want to help</p>
-            <p className="">Your fans are available for you help you</p>
+            <p className="font-bold">Simple & Secure Payments</p>
+            <p className="text-center">Receive financial support from your audience through a simple, secure, and convenient payment experience.</p>
           </div>
-          <div className="item space-y-3 flex flex-col justify-center items-center">
+          <div className="item w-1/3 space-y-3 flex flex-col justify-center items-center">
             <img className="bg-slate-400 rounded-full p-2 text-black" width={88} src="group.gif" alt="" />
-            <p className="font-bold">Your fans want to help</p>
-            <p className="">Your fans are available for you help you</p>
+            <p className="font-bold">Grow with Your Fans</p>
+            <p className="text-center">Build a stronger connection with your community and turn your audience’s support into opportunities to grow.</p>
           </div>
         </div>
       </div>
