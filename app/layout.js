@@ -1,9 +1,9 @@
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SessionWrapper from "@/components/SessionWrapper";
-
+import { ToastContainer, Bounce } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export const metadata = {
   icons: {
@@ -25,6 +25,20 @@ export default function RootLayout({ children }) {
         </div>
         <Footer/>
         </SessionWrapper>
+
+        <ToastContainer
+          position="top-center"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover={false}
+          theme="light"
+          transition={Bounce}
+        />
         </body>
     </html>
   );

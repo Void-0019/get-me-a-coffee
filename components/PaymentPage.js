@@ -106,20 +106,6 @@ const PaymentPage = ({ username }) => {
     }
     return (
         <>
-            <ToastContainer
-                position="top-center"
-                autoClose={5000}
-                hideProgressBar={false}
-                newestOnTop={false}
-                closeOnClick
-                rtl={false}
-                pauseOnFocusLoss
-                draggable
-                pauseOnHover={false}
-                theme="light"
-                transition={Bounce}
-            />
-
             <Script src="https://checkout.razorpay.com/v1/checkout.js"></Script>
 
 
@@ -174,9 +160,9 @@ const PaymentPage = ({ username }) => {
                         </div>
                         {/* Or choose from these amount */}
                         <div className="flex gap-2 mt-5">
-                            <button className='bg-slate-800 p-3 rounded-lg' onClick={() => pay(1000)}>Pay ₹10</button>
-                            <button className='bg-slate-800 p-3 rounded-lg' onClick={() => pay(2000)}>Pay ₹20</button>
-                            <button className='bg-slate-800 p-3 rounded-lg' onClick={() => pay(3000)}>Pay ₹30</button>
+                            <button className='bg-slate-800 p-3 rounded-lg disabled:opacity-50 disabled:cursor-not-allowed' type='button' disabled={paymentform.name.length < 2 || paymentform.message.length < 4 || paymentform.amount.length < 1} onClick={() => pay(1000)}>Pay ₹10</button>
+                            <button className='bg-slate-800 p-3 rounded-lg disabled:opacity-50 disabled:cursor-not-allowed' type='button' disabled={paymentform.name.length < 2 || paymentform.message.length < 4 || paymentform.amount.length < 1} onClick={() => pay(2000)}>Pay ₹20</button>
+                            <button className='bg-slate-800 p-3 rounded-lg disabled:opacity-50 disabled:cursor-not-allowed' type='button' disabled={paymentform.name.length < 2 || paymentform.message.length < 4 || paymentform.amount.length < 1} onClick={() => pay(3000)}>Pay ₹30</button>
                         </div>
                     </div>
                 </div>
