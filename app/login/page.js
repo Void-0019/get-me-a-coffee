@@ -15,7 +15,7 @@ const Login = () => {
   
   return (
     <div className='text-white py-14 container mx-auto'>
-      <h1 className='font-bold text-center text-3xl'>Login to Get your fans to support you</h1>
+      <h1 className='font-bold text-center text-3xl'>Login to Get Started</h1>
 
       <div className="social-login-button"></div>
 
