@@ -10,9 +10,9 @@ The project is being built with modern web technologies and new features are bei
 
 This project is **under construction**.
 
-Core functionality is being implemented and improved continuously.
+More functionality is being implemented and improved continuously.
 
-## 📋 Planned Features
+## 📋 Features
 
 * 🔐 User Authentication
 * 👤 Creator Profiles
