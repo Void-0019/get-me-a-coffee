@@ -133,7 +133,7 @@ const PaymentPage = ({ username }) => {
                 <div className="payment flex gap-3 w-[80%] mt-10">
                     <div className="supporters w-1/2 bg-slate-900 rounded-lg text-white p-10">
                         {/* Show list of all the supporters as a leaderboard. */}
-                        <h2 className='text-2xl font-bold mb-5'>Supporters</h2>
+                        <h2 className='text-2xl font-bold mb-5'>Top Supporters</h2>
                         <ul className='mx-5'>
                             {payments.length === 0 && <li>No payments yet</li>}
                             {payments.map((p) => {
